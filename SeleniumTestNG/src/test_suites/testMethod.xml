@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite" verbose="1">
+    <test name="FirstTest">
+        <classes>
+            <class name="jennie.Bai9_TestNG.RunExample">
+                <methods>
+                    <include name="testGoogleSearch" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
