@@ -3,7 +3,7 @@
 <suite name="Suite" verbose="1">
     <test name="FirstTest">
         <packages>
-            <package name="TestRunXML" />
+            <package name="jennie.Bai9_TestNG" />
         </packages>
     </test>
 </suite>
