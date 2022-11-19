@@ -3,9 +3,18 @@
 <suite name="Suite" verbose="1">
     <test name="FirstTest">
         <classes>
-            <class name="jennie.Bai9_TestNG.RunExample">
+            <class name="Bai10.Annotation">
                 <methods>
-                    <include name="testGoogleSearch" />
+                    <include name="testOneMethod" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SecondTest">
+        <classes>
+            <class name="Bai10.Annotation">
+                <methods>
+                    <include name="testTwoMethod" />
                 </methods>
             </class>
         </classes>
