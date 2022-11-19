@@ -3,7 +3,7 @@
 <suite name="Suite" verbose="1">
     <test name="FirstTest">
         <classes>
-            <class name="jennie.Bai9_TestNG.RunExample" />
+            <class name="Bai10.Exercise" />
         </classes>
     </test>
 </suite>
