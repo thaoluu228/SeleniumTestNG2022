@@ -3,18 +3,9 @@
 <suite name="Suite" verbose="1">
     <test name="FirstTest">
         <classes>
-            <class name="Bai10.Annotation">
+            <class name="Bai10.Exercise">
                 <methods>
-                    <include name="testOneMethod" />
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test name="SecondTest">
-        <classes>
-            <class name="Bai10.Annotation">
-                <methods>
-                    <include name="testTwoMethod" />
+                    <include name="SearchCategory" />
                 </methods>
             </class>
         </classes>
