@@ -3,6 +3,7 @@ package Bai10;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.time.Duration;
@@ -55,12 +56,8 @@ public class Exercise extends BaseTest {
         findElement("//input[@id='search']").sendKeys(categoryName, Keys.ENTER);
         sleep(2000);
         String getCategoryName = findElement("//tbody/tr[1]//td[2]").getText();
-        if (getCategoryName.equals(categoryName)){
-            System.out.println("Category: " +getCategoryName);
-        }
+       // Assert.assertEquals(getCategoryName,"Beauty and Hair");
+        Assert.assertTrue(getCategoryName.equals("Beauty and Hair"));
     }
-
-
-
 
 }
