@@ -1,14 +1,11 @@
 package Bai10;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import java.time.Duration;
-
-public class Exercise extends BaseTest {
+public class AddCategory extends BaseTest {
+    @Parameters("categoryName")
 
     @BeforeClass
     public void login(){
@@ -19,14 +16,14 @@ public class Exercise extends BaseTest {
 
     }
     @Test
-    public void AddCategory() throws InterruptedException {
+    public void AddNewCategory(String categoryName) throws InterruptedException {
         //open add category
         findElement("//li[@class='aiz-side-nav-item']//span[text()='Products']").click();
         findElement("//span[contains(text(),'Category')]").click();
         sleep(1000);
         findElement("//a[@class='btn btn-primary']").click();
         //category information
-        findElement("//input[@id='name']").sendKeys("Beauty and Hair");
+        findElement("//input[@id='name']").sendKeys(categoryName);
         findElement("//div[contains(text(),'No Parent')]").click();
         sleep(1000);
         findElement("//div[@class='dropdown-menu show']//input[@aria-label='Search']").sendKeys("Women", Keys.ENTER);
@@ -50,7 +47,6 @@ public class Exercise extends BaseTest {
         findElement("//button[normalize-space()='Save']").click();
     }
 
-    @Parameters("categoryName")
     @Test
      public void SearchCategory (String categoryName) throws InterruptedException{
         findElement("//input[@id='search']").sendKeys(categoryName, Keys.ENTER);
