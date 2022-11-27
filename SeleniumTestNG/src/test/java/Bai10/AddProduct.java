@@ -5,13 +5,13 @@ import org.testng.annotations.Test;
 
 public class AddProduct extends BaseTest{
 
-    @BeforeClass
-    public void login(){
-        driver.get("https://demo.activeitzone.com/ecommerce/login");
-        findElement("//input[@id='email']").sendKeys("admin@example.com");
-        findElement("//input[@id='password']").sendKeys("123456");
-        findElement("//button[contains(text(),'Login')]").click();
-    }
+//    @BeforeClass
+//    public void login(){
+//        driver.get("https://demo.activeitzone.com/ecommerce/login");
+//        findElement("//input[@id='email']").sendKeys("admin@example.com");
+//        findElement("//input[@id='password']").sendKeys("123456");
+//        findElement("//button[contains(text(),'Login')]").click();
+//    }
 
     @Test
     public void AddNewProduct() throws InterruptedException{

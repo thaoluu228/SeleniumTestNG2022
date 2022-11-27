@@ -3,9 +3,9 @@
 <suite name="Suite" verbose="1">
     <test name="FirstTest">
         <classes>
-            <class name="Bai10.AddCategory">
+            <class name="Bai10.EditAndDeleteCategory">
                 <methods>
-                    <include name="SearchCategory" />
+                    <include name="editCategory" />
                 </methods>
             </class>
         </classes>

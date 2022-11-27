@@ -4,22 +4,24 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 
 public class BaseTest {
     public static WebDriver driver;
-    @BeforeTest
+    @BeforeClass
     public void createDriver() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        driver.get("https://demo.activeitzone.com/ecommerce/login");
+        driver.findElement(By.xpath("//input[@id='email']")).sendKeys("admin@example.com");
+        driver.findElement(By.xpath("//input[@id='password']")).sendKeys("123456");
+        driver.findElement(By.xpath("//button[contains(text(),'Login')]")).click();
     }
-    @AfterTest
+    @AfterClass
     public void closeDriver(){
         driver.quit();
     }

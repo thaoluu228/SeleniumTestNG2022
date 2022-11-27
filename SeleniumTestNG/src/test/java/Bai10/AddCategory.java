@@ -5,17 +5,9 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class AddCategory extends BaseTest {
+
     @Parameters("categoryName")
-
-    @BeforeClass
-    public void login(){
-        driver.get("https://demo.activeitzone.com/ecommerce/login");
-        findElement("//input[@id='email']").sendKeys("admin@example.com");
-        findElement("//input[@id='password']").sendKeys("123456");
-        findElement("//button[contains(text(),'Login')]").click();
-
-    }
-    @Test
+    @Test(priority = 0)
     public void AddNewCategory(String categoryName) throws InterruptedException {
         //open add category
         findElement("//li[@class='aiz-side-nav-item']//span[text()='Products']").click();
@@ -47,6 +39,7 @@ public class AddCategory extends BaseTest {
         findElement("//button[normalize-space()='Save']").click();
     }
 
+    @Parameters("categoryName")
     @Test
      public void SearchCategory (String categoryName) throws InterruptedException{
         findElement("//input[@id='search']").sendKeys(categoryName, Keys.ENTER);

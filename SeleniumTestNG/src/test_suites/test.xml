@@ -5,6 +5,7 @@
         <parameter name="categoryName" value="Beauty and Hair"/>
         <classes>
             <class name="Bai10.AddCategory" />
+            <class name="Bai10.EditAndDeleteCategory" />
         </classes>
     </test>
 </suite>
