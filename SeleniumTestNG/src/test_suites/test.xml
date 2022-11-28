@@ -4,8 +4,9 @@
     <test name="Add Category">
         <parameter name="categoryName" value="Beauty and Hair"/>
         <classes>
-            <class name="Bai10.AddCategory" />
-            <class name="Bai10.EditAndDeleteCategory" />
-        </classes>
-    </test>
-</suite>
+            <!--<class name="Bai10.AddCategory" /> -->
+            <!-- <class name="Bai10.EditAndDeleteCategory" /> -->
+            <class name="Bai10.AddProduct" />
+         </classes>
+     </test>
+ </suite>
