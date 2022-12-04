@@ -44,8 +44,8 @@ public class PopupWindow {
                 Thread.sleep(2000);
 
                 //1 so ham ho tro kiem tra tab hien tai sau khi da switch
-                driver.switchTo().window(window).getCurrentUrl();
-                driver.switchTo().window(window).getTitle();
+                System.out.println(driver.switchTo().window(window).getCurrentUrl());
+                System.out.println(driver.switchTo().window(window).getTitle());
 
                 //Enter email password
                 driver.findElement(By.name("emailid")).sendKeys("jennie@gmail.com");
