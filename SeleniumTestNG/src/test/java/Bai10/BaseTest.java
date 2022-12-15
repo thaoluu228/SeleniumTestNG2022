@@ -14,7 +14,7 @@ public class BaseTest {
     public void createDriver() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 //        driver.get("https://demo.activeitzone.com/ecommerce/login");
 //        driver.findElement(By.xpath("//input[@id='email']")).sendKeys("admin@example.com");
