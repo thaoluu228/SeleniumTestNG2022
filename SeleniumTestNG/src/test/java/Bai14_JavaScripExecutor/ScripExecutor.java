@@ -2,8 +2,14 @@ package Bai14_JavaScripExecutor;
 
 import Bai10.BaseTest;
 import Keywords.WebUI;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class ScripExecutor extends BaseTest {
 
@@ -46,6 +52,26 @@ public class ScripExecutor extends BaseTest {
         WebUI.sleep(2);
 
 
+    }
+
+    @Test
+    public void addBrandCMS() {
+        driver.get("https://cms.anhtester.com/login");
+        driver.findElement(By.xpath("//button[normalize-space()='Copy']")).click();
+        driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
+
+        driver.findElement(By.xpath("//span[normalize-space()='Products']")).click();
+
+        //Khai báo WebDriverWait = Explicit Wait
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+        //Chờ đợi menu Brand đến khi sẵn sàng hiển thị để có thể thao tác được
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[normalize-space()='Brand']")));
+
+        driver.findElement(By.xpath("//span[normalize-space()='Brand']")).click();
+
+        String headerAddNewBrand = driver.findElement(By.xpath("//div[@class='card-header']/h5")).getText();
+        Assert.assertEquals(headerAddNewBrand, "Add New Brand");
     }
 
 }
