@@ -2,6 +2,7 @@ package Bai16_Baitap;
 
 import Bai10.BaseTest;
 import Keywords.WebUI;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -26,8 +27,8 @@ public class ManageCustomer extends BaseTest {
         System.out.println(findElement("//form/div[2]").getText());
     }
 
-    @Test (priority=0)
-    public void loginCRM(){
+    @Test (priority = 0)
+    public void loginCRM() {
         driver.get("https://crm.anhtester.com/admin/authentication");
         findElement("//input[@id='email']").sendKeys("admin@example.com");
         findElement("//input[@id='password']").sendKeys("123456");
@@ -40,9 +41,10 @@ public class ManageCustomer extends BaseTest {
     private String WEBSITE = "https://cmcglobal.com.vn/vi/home-vi/";
 
     @Test(priority = 1)
-    public void addCustomer(){
-        //loginCRM();
+    public void addCustomer() {
+        //loginCRM()
         sleep(1000);
+        WebUI.waitForPageLoaded(driver);
         WebUI.waitForElementVisible(driver, By.xpath("//span[normalize-space()='Customers']"));
         findElement("//span[normalize-space()='Customers']").click();
         WebUI.waitForPageLoaded(driver);
@@ -73,9 +75,10 @@ public class ManageCustomer extends BaseTest {
         WebUI.waitForElementVisible(driver, By.xpath("//span[@class='alert-title']"));
         //verify message success
         Assert.assertTrue(WebUI.checkElementExist(driver,"//span[@class='alert-title']" ));
-        System.out.println(findElement("//span[@class='alert-title']").getAttribute("value"));
+        System.out.println(findElement("//span[@class='alert-title']").getText());
 
         verifyCustomer();
+        deleteCustomer();
     }
 
     public void verifyCustomer(){
@@ -94,5 +97,14 @@ public class ManageCustomer extends BaseTest {
         WebElement element = findElement("//tbody/tr[1]/td[3]/a");
         Actions action = new Actions(driver);
         action.moveToElement(element).build().perform();
+        sleep(2000);
+        WebUI.waitForElementVisible(driver, By.xpath("//tbody/tr[1]/td[3]/div/a[contains(text(),'Delete')]"));
+        findElement("//tbody/tr[1]/td[3]/div/a[contains(text(),'Delete')]").click();
+        Alert alert = driver.switchTo().alert();
+        sleep(2000);
+        alert.accept();
+        sleep(2000);
+        Assert.assertTrue(WebUI.checkElementExist(driver,"//span[@class='alert-title']" ));
+        System.out.println(findElement("//span[@class='alert-title']").getText());
     }
 }
