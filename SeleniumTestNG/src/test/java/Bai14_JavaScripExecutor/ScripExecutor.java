@@ -1,16 +1,12 @@
 package Bai14_JavaScripExecutor;
 
-import Bai10.BaseTest;
+import BaseTest.BaseTest;
 import Keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.time.Duration;
 
 public class ScripExecutor extends BaseTest {
 

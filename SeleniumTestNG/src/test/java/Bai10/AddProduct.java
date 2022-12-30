@@ -1,13 +1,13 @@
 package Bai10;
 
+import BaseTest.BaseTest;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class AddProduct extends BaseTest{
+public class AddProduct extends BaseTest {
 
     @Parameters("categoryName")
     @Test

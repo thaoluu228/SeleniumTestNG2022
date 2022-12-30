@@ -1,6 +1,6 @@
 package Bai16_Baitap;
 
-import Bai10.BaseTest;
+import BaseTest.BaseTest;
 import Keywords.WebUI;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
